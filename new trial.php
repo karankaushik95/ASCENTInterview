@@ -1,3 +1,5 @@
+<!--error is : Parse error: syntax error, unexpected '"rows"' (T_CONSTANT_ENCAPSED_STRING), expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in F:\xampp\htdocs\ascent\index.php on line 19-->
+
 <?php
 $lat1  = 19.027732;	//Karan Latitude
 $long1 = 72.858293; //Karan Longitude
@@ -14,8 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$long3 = $_POST['Longitude']; //Third point Longitude
 	$json = file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyB6vwsPFlyQtLcW39ctJBKGn59yPGFU7Ew');//testing if api works 
 	//$data = json_decode($json, true);
+	//$duration = $data[$key];
+	echo $json;
+	$duration = $json->"rows"->"elements"->"duration";
 	//var_dump ($json);// 
-	echo $json["rows"][0]["elements"][0]["distance"]["duration"]["text"];
+	//echo $json["rows"][0]["elements"][0]["distance"]["duration"]["text"];
 	
 }
 ?>
@@ -33,3 +38,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		</form>	
 	</body>
 </html>
+
+
