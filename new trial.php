@@ -13,8 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$lat3  = $_POST['Latitude']; //Third point Latitude
 	$long3 = $_POST['Longitude']; //Third point Longitude
 	$json = file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=Washington,DC&destinations=New+York+City,NY&key=AIzaSyB6vwsPFlyQtLcW39ctJBKGn59yPGFU7Ew');//testing if api works 
-	$data = json_decode($json, true);
-	print_r ($data.rows[0].elements[0].distance.text);
+	//$data = json_decode($json, true);
+	//var_dump ($json);// 
+	echo $json["rows"][0]["elements"][0]["distance"]["duration"]["text"];
 	
 }
 ?>
