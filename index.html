@@ -1,10 +1,22 @@
+<!-- TO DO LIST
+1) Make everything more secure. Does not account for blank inputs, invalid inputs or basically any non-standard inputs.
+2) If source or destination is same as ASCENT or Home, API will get confused and totally ruin my program.
+3) Can modify it to take all 3 points from user. 
+4) Refactor the code to remove lot of unwanted lines.
+5) Major cleanup in terms of turning the whole get distance into a function.-->
+
+
 <!DOCTYPE html>
 <html>
-<body>
-<form method="post" action="/Ascent/Ascent.php">
-	Latitude: <input type="text" name="Latitude">&nbsp&nbsp&nbsp&nbsp&nbsp
-	Longitude: <input type="text" name="Longitude"><br><br>
-<input type="submit">
-</form>
-</body>
+	<head>
+		<title>Distance Calculation</title>
+	</head>	
+	<body>
+		<form method="post" action="/Ascent/Ascent.php">
+			Latitude: <input type="text" name="Latitude">&nbsp&nbsp&nbsp&nbsp&nbsp
+			Longitude: <input type="text" name="Longitude"><br><br>
+			<input type="submit">
+		</form>	
+	</body>
 </html>
+
